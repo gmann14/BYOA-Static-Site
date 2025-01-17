@@ -30,12 +30,102 @@ h1, h2, h3 {
     color: #333;
 }
 
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin: 2rem 0 1rem;
+}
+
 footer {
     margin-top: 2rem;
     padding-top: 1rem;
     border-top: 1px solid #eee;
     text-align: center;
     color: #666;
+}
+
+/* Links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 2px rgba(0,102,204,0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-button {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+    background: #0052a3;
+}
+
+.submit-button:active {
+    transform: translateY(1px);
 }
 
 /* Blog styles */
@@ -131,4 +221,33 @@ article p {
 
 .blog-excerpt .read-more a:hover {
     text-decoration: underline;
+}
+
+/* FAQ Page */
+.faq-section h2 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+/* About Page */
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.social-links li {
+    margin: 1rem 0;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.social-links a:hover {
+    color: #0066cc;
 } 

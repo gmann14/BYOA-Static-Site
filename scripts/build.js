@@ -71,6 +71,7 @@ async function build() {
     // Read templates
     const baseTemplate = await fs.readFile('templates/base.html', 'utf8');
     const blogPostTemplate = await fs.readFile('templates/blog-post.html', 'utf8');
+    const contactTemplate = await fs.readFile('templates/contact.html', 'utf8');
     
     async function processFile(filePath, isPost = false) {
         const content = await fs.readFile(filePath, 'utf8');
@@ -80,6 +81,8 @@ async function build() {
         let template = baseTemplate;
         if (attributes.template === 'blog-post') {
             template = blogPostTemplate;
+        } else if (attributes.template === 'contact') {
+            template = contactTemplate;
         }
         
         // Replace all template variables
@@ -102,10 +105,27 @@ async function build() {
             finalHtml = finalHtml.replace('{{blog_posts}}', blogList);
         }
         
-        const fileName = path.basename(filePath, '.md') + '.html';
-        const outPath = isPost 
-            ? path.join('public/dist/blog', fileName)
-            : path.join('public/dist', fileName);
+        let outPath;
+        const fileName = path.basename(filePath, '.md');
+        
+        if (isPost) {
+            // Blog posts get .html extension
+            outPath = path.join('public/dist/blog', fileName + '.html');
+        } else if (attributes.template === 'page' || attributes.template === 'contact') {
+            // Pages get clean URLs with index.html
+            await fs.ensureDir(path.join('public/dist', fileName));
+            outPath = path.join('public/dist', fileName, 'index.html');
+        } else if (fileName === 'index') {
+            // Homepage goes to /index.html
+            outPath = path.join('public/dist', 'index.html');
+        } else if (fileName === 'blog') {
+            // Blog index goes to /blog.html
+            outPath = path.join('public/dist', 'blog.html');
+        } else {
+            // Everything else gets clean URLs
+            await fs.ensureDir(path.join('public/dist', fileName));
+            outPath = path.join('public/dist', fileName, 'index.html');
+        }
             
         await fs.writeFile(outPath, finalHtml);
         console.log(`Built: ${outPath}`);
@@ -135,4 +155,4 @@ async function build() {
     }
 }
 
-build().catch(console.error); 
+build().catch(console.error);
