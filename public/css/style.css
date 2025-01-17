@@ -36,4 +36,99 @@ footer {
     border-top: 1px solid #eee;
     text-align: center;
     color: #666;
+}
+
+/* Blog styles */
+.blog-post {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.blog-post h1 {
+    margin-bottom: 0.5rem;
+}
+
+.post-meta {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.post-meta time {
+    margin-right: 1rem;
+}
+
+.post-meta .author {
+    color: #444;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+article pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+article code {
+    background: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+article p {
+    margin: 1.5rem 0;
+}
+
+/* Blog listing page */
+.blog-excerpt {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.blog-excerpt:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.blog-excerpt h2 {
+    margin: 0 0 0.5rem 0;
+}
+
+.blog-excerpt h2 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.blog-excerpt h2 a:hover {
+    color: #0066cc;
+}
+
+.blog-excerpt .excerpt {
+    margin: 1rem 0;
+}
+
+.blog-excerpt .read-more {
+    margin-top: 1rem;
+}
+
+.blog-excerpt .read-more a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.blog-excerpt .read-more a:hover {
+    text-decoration: underline;
 } 

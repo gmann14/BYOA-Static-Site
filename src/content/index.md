@@ -9,7 +9,6 @@ This is a simple, fast-loading website built with basic web technologies.
 ## Latest Posts
 
 - [First Blog Post](/blog/first-post)
-- [Second Blog Post](/blog/second-post)
 
 ## About Me
 
